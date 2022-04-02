@@ -1,4 +1,5 @@
 import 'package:financial_expert/model/expense.dart';
+import 'package:financial_expert/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class ExpenseTile extends StatelessWidget {
@@ -18,12 +19,14 @@ class ExpenseTile extends StatelessWidget {
           child: Row(
             children: <Widget>[
               IconButton(
-                icon: Icon(Icons.edit),
-                onPressed: () {},
+                icon: const Icon(Icons.edit),
+                onPressed: () {
+                  Navigator.of(context).pushNamed(AppRoutes.EXPENSE_FORM, arguments: expense);
+                },
                 color: Colors.orange,
               ),
                IconButton(
-                icon: Icon(Icons.delete),
+                icon: const Icon(Icons.delete),
                 onPressed: () {},
                 color: Colors.red,
               ),
